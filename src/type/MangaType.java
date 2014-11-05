@@ -5,7 +5,8 @@ public enum MangaType {
 	OnePiece(1, "Utility/2/", "OnePiece"),
 	Naruto(2,"Utility/4/","Naruto"),
 	Bleach(3,"Utility/19/","Bleach"),
-	CoNan(4,"Utility/333/","CoNan");
+	CoNan(4,"Utility/333/","CoNan"),
+	FairyTail(5,"Utility/348/","FairyTail");
 
 	private int code;
 	private String subAddress;
