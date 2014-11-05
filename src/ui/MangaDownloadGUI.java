@@ -5,9 +5,6 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
-import java.awt.BorderLayout;
-import java.awt.Choice;
-
 import javax.swing.JComboBox;
 import javax.swing.DefaultComboBoxModel;
 
@@ -15,14 +12,11 @@ import type.MangaType;
 import type.MangaWebSite;
 import utils.downloadutil.DownloadBrain;
 
-import java.awt.Label;
-
 import javax.swing.JTextField;
 import javax.swing.JButton;
 
 import factory.DownloadUtilFactory;
 
-import java.awt.TextArea;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JTextArea;
@@ -64,7 +58,7 @@ public class MangaDownloadGUI {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(100, 100, 450, 300);
+		frame.setBounds(100, 100, 567, 300);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 
@@ -125,8 +119,11 @@ public class MangaDownloadGUI {
 		txtrIfYouDownload.setEditable(false);
 		txtrIfYouDownload.setLineWrap(true);
 		txtrIfYouDownload
-				.setText("if the episode you download doesn't exist, this tool will simply do nothing. You can check that from SFOnline to see if the episode or volume exist.");
-		txtrIfYouDownload.setBounds(230, 28, 178, 171);
+				.setText("DownloadRange:\nOnePiece(海贼王):volume(合集) 001j~040j and episode(单集) 389~current."
+						+ "\nFarilyTail(妖精的尾巴):1~current.\nNaruto(火影):volume 001j~032j and episode 291~current. "
+						+ "\nGintama(银魂):1~current.\nBleach(死神): volume 001j~020j and episode 179~current."
+						+ "\nConan(柯南): volume 001j~053j and episode 565~current");
+		txtrIfYouDownload.setBounds(230, 28, 331, 184);
 		frame.getContentPane().add(txtrIfYouDownload);
 
 		textField_relative_addr = new JTextField();
@@ -137,6 +134,10 @@ public class MangaDownloadGUI {
 		JLabel lblRelavant = new JLabel("relative address");
 		lblRelavant.setBounds(27, 216, 110, 16);
 		frame.getContentPane().add(lblRelavant);
+		
+		JLabel lblEgj = new JLabel("eg. 001j");
+		lblEgj.setBounds(145, 166, 61, 16);
+		frame.getContentPane().add(lblEgj);
 
 		btnDownload.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
